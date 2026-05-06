@@ -25,6 +25,13 @@ dados$dia <- factor(dados$dia,
 
 contagem <- table(dados$dia)
 
+# Conta a frequência de cada número
+frequencias <- table(dados)
+
+# Mostra o valor que ocorre com maior frequência
+moda <- names(frequencias)[which.max(frequencias)]
+print(moda)
+
 #variavel pra tirar os zerados, já que não existe n,rm=true no pie()
 remove_contagem <- contagem[contagem >0]
 
