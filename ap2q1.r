@@ -10,5 +10,27 @@ setwd("c:/Users/livra/OneDrive/Documentos/estatistica-com-apoio-computacional")
 prob_4 <-dpois(x=4, lambda = 3)
 
 porcentagem <- round(prob_4 * 100, 2)
+
+cat("A probabilidade de ocorrer 4 acidentes é:", porcentagem, "%\n")
 #1P Verifique as probabilidades de que ocorram 
 #de 0 a 15 acidentes e plote o gráfico da distribuição.
+
+acidentes <-0:15
+
+probabilidade<-dpois(x=acidentes, lambda = 3)
+prob_porcentagem <- round(probabilidade *100, 2)
+
+tabela_result <- data.frame(Num_acidentes=acidentes, 
+                            Probabilidade_porcentagem=prob_porcentagem)
+
+print(tabela_result)
+
+plot(acidentes, probabilidade,
+     type="h",
+     lwd="3",
+     col="blue",
+     main="Gráfico de probabilidade acidentes",
+     ylab="Porcentagem",
+     xlab="Acidentes")
+
+points(acidentes, probabilidade, pch = 19, col = "red", cex = 1.2)
