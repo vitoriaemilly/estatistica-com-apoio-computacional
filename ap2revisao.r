@@ -9,7 +9,15 @@ confianca <-0.95
 n <-36
 media_a <-150
 
-#a)
+#valor de z para 95% de confiança
 alpha <- 1 - confianca
-
 z<-qnorm(1-alfa/2)
+
+# o erro padrão da média
+erro_padrao <- desvio / sqrt(n)
+
+#erros
+margem_erro <- z * erro_padrao
+
+lim_superior<-media_a + margem_erro
+lim_inferiror<-media_a - margem_erro
